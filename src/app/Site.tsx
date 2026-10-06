@@ -929,6 +929,10 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
             </nav>
             <p>仓储装卸 · 跨境运输 · 外贸代理 · 报关报检</p>
           </div>
+          <address className="footer-contact">
+            <p>地址：新疆塔城地区塔城市巴克图路南侧(盛大兴泰监管库)</p>
+            <p>邮箱：<a href="mailto:info@shengdaxingtai.com">info@shengdaxingtai.com</a></p>
+          </address>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} 新疆盛大兴泰商贸有限公司</span>
             <span>以诚信经营铸就口碑，以专业服务链接未来</span>
