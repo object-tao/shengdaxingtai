@@ -141,7 +141,7 @@ const services = [
     slug: "china-europe-route" as ServiceSlug,
     number: "02",
     icon: "rail" as IconName,
-    title: "中欧航线",
+    title: "中欧卡航",
     english: "CHINA–EUROPE ROUTE",
     description:
       "依托新疆口岸区位优势，链接中亚与欧洲市场，提供稳定、准时的跨境班列及公路联运服务。",
@@ -202,7 +202,7 @@ const serviceDetails: Record<
   },
   "china-europe-route": {
     eyebrow: "CHINA–EUROPE ROUTE",
-    title: "中欧航线",
+    title: "中欧卡航",
     summary: "依托新疆口岸区位优势，构筑链接中国、中亚与欧洲市场的稳定跨境运输通道。",
     statement:
       "整合跨境公路、班列及口岸资源，为客户提供从国内集货到境外交付的全程运输方案。专业调度团队持续跟踪关键节点，提升国际干线运输的稳定性和时效确定性。",
@@ -810,7 +810,7 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
                     请选择您感兴趣的服务
                   </option>
                   <option>海关监管仓</option>
-                  <option>中欧航线</option>
+                  <option>中欧卡航</option>
                   <option>国际物流</option>
                   <option>报关报检</option>
                   <option>综合物流方案</option>
