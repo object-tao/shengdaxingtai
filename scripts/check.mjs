@@ -1,0 +1,10 @@
+import { readFileSync, existsSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+assert.equal(pkg.private, true);
+assert.ok(existsSync('public/index.html'), 'Missing website entry point');
+const html = readFileSync('public/index.html', 'utf8');
+assert.match(html, /<html\b/);
+assert.match(html, /<title>[^<]+<\/title>/);
+assert.match(html, /name="viewport"/);
+console.log('Website entry point checks passed.');
