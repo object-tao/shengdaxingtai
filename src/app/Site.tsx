@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type ReactNode } from "react"
+import { useEffect, useState, type FormEvent, type ReactNode } from "react"
 import { Link, useLocation } from "react-router"
 import companyLogo from "../imports/grandxingtai-logo.png"
 import baktuEntrance from "../imports/warehouse/baktu-entrance.jpg"
@@ -295,6 +295,15 @@ const stats = [
   { value: "5.1", unit: "万吨", label: "货物存储量" },
 ]
 
+const subsidiaries = [
+  "新疆盛大隆腾国际货运代理有限公司",
+  "新疆盛大物流供应链有限公司",
+  "新疆欧亚盛大电子商务有限公司",
+  "新疆腾飞果业有限公司",
+  "新疆聚隆报关服务有限公司",
+  "塔城市坤元拓达物流供应链有限公司",
+]
+
 const commerceModels = [
   { code: "9610", title: "跨境贸易电子商务", text: "小包直邮 · 快递专线" },
   { code: "9710", title: "跨境电商 B2B 直接出口", text: "整柜拼箱 · 批量出口" },
@@ -378,6 +387,12 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
   const [mobileBusinessOpen, setMobileBusinessOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash === "#subsidiaries") {
+      document.getElementById("subsidiaries")?.scrollIntoView({ behavior: "instant" })
+    }
+  }, [location.pathname, location.hash])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -613,6 +628,11 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
               <Link className="text-link" to="/contact">
                 与我们展开合作 <Icon name="arrow" />
               </Link>
+              {page === "home" && (
+                <Link className="text-link subsidiaries-entry" to="/about#subsidiaries">
+                  了解旗下企业 <Icon name="arrow" />
+                </Link>
+              )}
             </div>
           </div>
           <div className="stats-grid">
@@ -720,6 +740,28 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
           </div>
         </div>
       </section>}
+
+      {page === "about" && (
+        <section id="subsidiaries" className="section subsidiaries-section" aria-labelledby="subsidiaries-heading">
+          <div className="container">
+            <p className="detail-label">OUR COMPANIES</p>
+            <h2 id="subsidiaries-heading">总公司与子公司</h2>
+            <p className="subsidiaries-intro">依托本地资源与行业经验，总公司与旗下企业协同开展业务，构建完整的产业服务网络。</p>
+            <div className="parent-company">
+              <span>总公司</span>
+              <h3>新疆盛大兴泰商贸有限公司</h3>
+            </div>
+            <div className="subsidiaries-grid">
+              {subsidiaries.map((name, index) => (
+                <article className="subsidiary-card" key={name}>
+                  <span>子公司 · {String(index + 1).padStart(2, "0")}</span>
+                  <h3>{name}</h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {page === "about" && <section className="section advantage-section">
         <div className="container">

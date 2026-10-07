@@ -1542,6 +1542,93 @@ a {
   width: 1rem;
 }
 
+.subsidiaries-entry {
+  margin-left: 1.5rem;
+}
+
+.subsidiaries-section {
+  background: #f2f7fb;
+  scroll-margin-top: 7rem;
+}
+
+.subsidiaries-section h2 {
+  color: #082c52;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+}
+
+.subsidiaries-intro {
+  max-width: 46rem;
+  margin: 1rem 0 2.5rem;
+  color: #667d94;
+  line-height: 1.8;
+}
+
+.parent-company {
+  padding: 2rem;
+  color: white;
+  background: #082c52;
+  border-top: 4px solid #2caada;
+}
+
+.parent-company span,
+.subsidiary-card > span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.parent-company span {
+  color: #8bd5f0;
+}
+
+.parent-company h3 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 700;
+}
+
+.subsidiaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.subsidiary-card {
+  padding: 1.75rem;
+  background: white;
+  border: 1px solid #dce7ef;
+}
+
+.subsidiary-card > span {
+  color: #0b5fa5;
+}
+
+.subsidiary-card h3 {
+  margin-top: 1rem;
+  color: #082c52;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+@media (max-width: 1023px) {
+  .subsidiaries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .subsidiaries-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .subsidiaries-entry {
+    margin-left: 0;
+    display: flex;
+    width: fit-content;
+  }
+}
+
 footer {
   color: white;
   background: #041d36;
