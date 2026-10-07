@@ -4,6 +4,7 @@ import { Link, t, LanguageSwitcher, getLanguage, stripLanguage } from "../i18n"
 import { rememberLanguage } from "../i18n/locale"
 import { pageMetadata } from "../i18n/metadata"
 import companyLogo from "../imports/grandxingtai-logo.png"
+import wechatQrCode from "../imports/wechat-official-account.png"
 import baktuEntrance from "../imports/warehouse/baktu-entrance.jpg"
 import freightYard from "../imports/warehouse/freight-yard.jpg"
 import inspectionLane from "../imports/warehouse/inspection-lane.jpg"
@@ -964,10 +965,19 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
             </nav>
             <p>{t("仓储装卸 · 跨境运输 · 外贸代理 · 报关报检")}</p>
           </div>
+          <div className="footer-contact-row">
           <address className="footer-contact">
             <p>{t("地址：新疆塔城地区塔城市巴克图路南侧(盛大兴泰监管库)")}</p>
             <p>{t("邮箱：")}<a href="mailto:info@shengdaxingtai.com">info@shengdaxingtai.com</a></p>
           </address>
+          <figure className="footer-wechat">
+            <img src={wechatQrCode} width="290" height="245" alt={t("企业微信公众号二维码")} loading="lazy" />
+            <figcaption>
+              <strong>{t("企业公众号")}</strong>
+              <span>{t("微信扫码关注")}</span>
+            </figcaption>
+          </figure>
+          </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} {t("新疆盛大兴泰商贸有限公司")}</span>
             <span>{t("以诚信经营铸就口碑，以专业服务链接未来")}</span>

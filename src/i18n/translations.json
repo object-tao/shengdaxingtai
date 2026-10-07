@@ -1243,5 +1243,20 @@
     "en": "SERVICE PROCESS",
     "ru": "ПРОЦЕСС ОБСЛУЖИВАНИЯ",
     "tr": "HİZMET SÜRECİ"
+  },
+  "企业公众号": {
+    "en": "Official WeChat Account",
+    "ru": "Официальный аккаунт WeChat",
+    "tr": "Resmî WeChat Hesabı"
+  },
+  "微信扫码关注": {
+    "en": "Scan with WeChat to follow",
+    "ru": "Отсканируйте в WeChat, чтобы подписаться",
+    "tr": "Takip etmek için WeChat ile tarayın"
+  },
+  "企业微信公众号二维码": {
+    "en": "Official WeChat account QR code",
+    "ru": "QR-код официального аккаунта WeChat",
+    "tr": "Resmî WeChat hesabının QR kodu"
   }
 }

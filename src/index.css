@@ -1778,6 +1778,58 @@ footer {
   overflow-wrap: anywhere;
 }
 
+.footer-contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1.75rem;
+}
+
+.footer-contact-row .footer-contact {
+  margin: 0;
+  max-width: 46rem;
+}
+
+.footer-wechat {
+  margin: 0;
+  flex: 0 0 180px;
+  text-align: center;
+}
+
+.footer-wechat img {
+  display: block;
+  width: 180px;
+  height: auto;
+  background: white;
+}
+
+.footer-wechat strong,
+.footer-wechat span {
+  display: block;
+  margin-top: 0.55rem;
+  line-height: 1.6;
+}
+
+.footer-wechat strong {
+  font-size: 0.875rem;
+}
+
+.footer-wechat span {
+  color: #b6c8da;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .footer-contact-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .footer-wechat {
+    flex-basis: auto;
+  }
+}
+
 .footer-contact p {
   margin: 0.35rem 0;
 }
