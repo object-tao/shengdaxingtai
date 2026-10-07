@@ -293,10 +293,10 @@ const warehousePhotos = [
 ]
 
 const stats = [
-  { value: "1.2", unit: t("亿元"), label: t("公司投资") },
-  { value: "16,713", unit: "㎡", label: t("现代化仓储面积") },
-  { value: "7", unit: t("万㎡"), label: t("建设设备场") },
-  { value: "5.1", unit: t("万吨"), label: t("货物存储量") },
+  { value: "1.8", unit: t("亿元"), label: t("公司投资") },
+  { value: "27,000", unit: "㎡", label: t("现代化仓储面积") },
+  { value: "21", unit: t("万㎡"), label: t("建设设备场") },
+  { value: "12", unit: t("万吨"), label: t("货物存储量") },
 ]
 
 const subsidiaries = [
@@ -606,7 +606,7 @@ export default function SitePage({ page, service }: { page: PageName; service?: 
                   </span>
                   <p>
                     <strong>{t("雄厚资本护航")}</strong>
-                    <small>{t("1.2亿元投资，构筑稳健业务基础")}</small>
+                    <small>{t("1.8亿元投资，构筑稳健业务基础")}</small>
                   </p>
                 </div>
                 <div>

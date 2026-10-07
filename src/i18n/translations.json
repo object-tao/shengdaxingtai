@@ -839,11 +839,6 @@
     "ru": "Прочная инвестиционная база",
     "tr": "Güçlü Sermaye Temeli"
   },
-  "1.2亿元投资，构筑稳健业务基础": {
-    "en": "RMB 120 million invested in a solid operational foundation",
-    "ru": "120 млн юаней инвестиций в устойчивую основу бизнеса",
-    "tr": "Sağlam bir iş altyapısı için 120 milyon RMB yatırım"
-  },
   "完整产业协同": {
     "en": "Integrated Business Coordination",
     "ru": "Согласованная работа компаний",
@@ -1258,5 +1253,10 @@
     "en": "Official WeChat account QR code",
     "ru": "QR-код официального аккаунта WeChat",
     "tr": "Resmî WeChat hesabının QR kodu"
+  },
+  "1.8亿元投资，构筑稳健业务基础": {
+    "en": "RMB 180 million invested in a solid operational foundation",
+    "ru": "180 млн юаней инвестиций в устойчивую основу бизнеса",
+    "tr": "Sağlam bir iş altyapısı için 180 milyon RMB yatırım"
   }
 }
