@@ -1,61 +1,20 @@
-import { createBrowserRouter, Navigate } from "react-router"
-
+import { createBrowserRouter, Navigate, useLocation } from "react-router"
+import { languages, localizedPath, preferredLanguage, getLanguage } from "../i18n/locale"
+import { pageCatalog } from "../i18n/metadata"
+function LegacyRedirect() {
+  const location = useLocation()
+  const language = location.pathname === "/" ? preferredLanguage() : "zh"
+  return <Navigate to={localizedPath(location.pathname, language) + location.search + location.hash} replace />
+}
+function UnknownPage() { return <Navigate to={localizedPath("/", getLanguage())} replace /> }
 export const router = createBrowserRouter([
-  {
-    path: "/",
+  ...languages.flatMap(language => pageCatalog.map(page => ({
+    path: localizedPath(page.path, language),
     lazy: async () => {
-      const { HomePage } = await import("./Site")
-      return { Component: HomePage }
+      const pages = await import("./Site")
+      return { Component: pages[page.component] }
     },
-  },
-  {
-    path: "/about",
-    lazy: async () => {
-      const { AboutPage } = await import("./Site")
-      return { Component: AboutPage }
-    },
-  },
-  {
-    path: "/business",
-    lazy: async () => {
-      const { BusinessPage } = await import("./Site")
-      return { Component: BusinessPage }
-    },
-  },
-  {
-    path: "/business/bonded-warehouse",
-    lazy: async () => {
-      const { BondedWarehousePage } = await import("./Site")
-      return { Component: BondedWarehousePage }
-    },
-  },
-  {
-    path: "/business/china-europe-route",
-    lazy: async () => {
-      const { ChinaEuropeRoutePage } = await import("./Site")
-      return { Component: ChinaEuropeRoutePage }
-    },
-  },
-  {
-    path: "/business/international-logistics",
-    lazy: async () => {
-      const { InternationalLogisticsPage } = await import("./Site")
-      return { Component: InternationalLogisticsPage }
-    },
-  },
-  {
-    path: "/business/customs-clearance",
-    lazy: async () => {
-      const { CustomsClearancePage } = await import("./Site")
-      return { Component: CustomsClearancePage }
-    },
-  },
-  {
-    path: "/contact",
-    lazy: async () => {
-      const { ContactPage } = await import("./Site")
-      return { Component: ContactPage }
-    },
-  },
-  { path: "*", element: <Navigate to="/" replace /> },
+  }))),
+  ...pageCatalog.map(page => ({ path: page.path, element: <LegacyRedirect /> })),
+  { path: "*", element: <UnknownPage /> },
 ])

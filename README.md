@@ -14,7 +14,7 @@ npm run build
 npm run preview
 ```
 
-构建输出为 dist/。Cloudflare Pages 默认 SPA 回退支持直接打开业务子页面；不要添加顶层 404.html。
+构建输出为 dist/。构建额外生成四种语言的 32 个 HTML 入口、站点地图及旧链接跳转配置；Cloudflare Pages 保留 SPA 回退。
 
 ## CI/CD
 
@@ -40,3 +40,17 @@ PR 不发布。不要把令牌放入源码或聊天。
 在 Cloudflare Pages 回滚到之前成功的生产部署，并 revert 对应 Git 提交。
 
 参考：https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/
+
+## 多语言维护
+
+支持 zh（中文）、en（英文）、ru（俄语）、tr（土耳其语）。首次访问根地址默认中文，之后记住选择。明确的语言 URL 优先于保存偏好；旧业务链接固定转到中文地址。
+
+- src/i18n/translations.json：文案词典。公司中文法定名称保留，附外语展示译名。
+- src/i18n/locale.ts：语言、路径和本地偏好。
+- src/i18n/metadata.ts：8 个页面的标题、描述和语言对应地址。
+- scripts/localized-pages.mjs：生成各语言 HTML 标题、描述、canonical、hreflang、sitemap 和旧地址 301。
+- tests/i18n.test.mjs：检查翻译覆盖、监管代码、默认语言、偏好和路径保留。
+
+语言切换与内部页面链接使用完整页面导航，让浏览器同时加载对应语言的文案和静态元数据。修改文案时同步更新三种外语译文，CI 会拒绝缺少翻译的修改。
+
+外语公司名称是展示译名，非经确认的法定外文名称。咨询表单仍未接通实际发送服务，四种语言均明确提示需求尚未发送。
